@@ -7,6 +7,7 @@ class DoublyLinkedList {
 
     private static Node head;
     private static Node tail;
+    private static int size = 0;
 
     public static class Node {
 
@@ -33,7 +34,9 @@ class DoublyLinkedList {
             newNode.prev = tail;
             tail = newNode;
         }
+        size++;
         System.out.println("Element " + value + " is added");
+        System.out.println("new size of the linked list: " + size);
     }
 
     public static void remove(int data){
@@ -70,8 +73,10 @@ class DoublyLinkedList {
                 iterator.next.prev = iterator.prev;
             }
         }
+        size--;
 
         System.out.println("Element " + data + " is removed");
+        System.out.println("new size of the linked list: " + size);
 
 
     }

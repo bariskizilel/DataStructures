@@ -3,6 +3,7 @@ package Lists;
 public class CircularSinglyLinkedList {
 
     private static Node head;
+    private static int size = 0;
 
     public static class Node {
         int value;
@@ -26,7 +27,9 @@ public class CircularSinglyLinkedList {
             iterator.next = newNode;
             newNode.next = head;
         }
+        size++;
         System.out.println("Element " + value + " is added");
+        System.out.println("new size of the circular linked list: " + size);
     }
 
     public static void remove(int data) {
@@ -51,6 +54,8 @@ public class CircularSinglyLinkedList {
                 iterator.next = head;
             }
             System.out.println("Element " + data + " is removed");
+            size--;
+            System.out.println("new size of the circular linked list: " + size);
             return;
         }
 
@@ -60,6 +65,8 @@ public class CircularSinglyLinkedList {
             if (nextNode.value == data) {
                 iterator.next = nextNode.next;
                 System.out.println("Element " + data + " is removed");
+                size--;
+                System.out.println("new size of the circular linked list: " + size);
                 return;
             }
 
