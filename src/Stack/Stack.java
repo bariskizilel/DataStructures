@@ -4,11 +4,11 @@ import java.util.NoSuchElementException;
 
 public class Stack {
 
-    private Node top;
+    public Node top;
     private static int size = 0;
 
     public static class Node {
-        int data;
+        public int data;
         Node next;
         public Node(int data) {
             this.data = data;
@@ -24,8 +24,6 @@ public class Stack {
         newNode.next = top;
         top = newNode;
         size++;
-        System.out.println("new node " + data + " is added to the stack");
-        System.out.println("new size of the stack is, " + size);
     }
 
     public void pop() {
@@ -35,8 +33,6 @@ public class Stack {
         int data = top.data;
         top = top.next;
         size--;
-        System.out.println(data + " is removed");
-        System.out.println("new size of the stack is, " + size);
     }
 
     public void showTop() {
